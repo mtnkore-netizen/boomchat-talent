@@ -23,10 +23,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
 
       - name: Ensure google-services.json exists
         run: |
@@ -65,16 +61,19 @@ jobs:
           EOF
           fi
 
-      - name: Grant Execute Permission to gradlew
-        run: chmod +x gradlew
-
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.5'
+
+      - name: Accept Android SDK Licenses
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: gradle assembleDebug --no-daemon --stacktrace
 
-      - name: Rename APK
+      - name: Rename & Prepare APK
         run: |
           mkdir -p output_apk
           cp app/build/outputs/apk/debug/app-debug.apk output_apk/BoomChat-Talent-v1.0.apk
