@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Spiritual Banner with Developer Credo -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@color/primary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHRISTIAN SPIRITUAL GROWTH"
+                    android:letterSpacing="0.1"
+                    android:textColor="@color/accent_gold"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Spiritual Empowerment Hub"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Grow daily in faith, prayer, scripture meditation, Godly media, and live Bible teaching."
+                    android:textColor="@color/white"
+                    android:alpha="0.9"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#33FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Credo: Living rightly with God and fellow people"
+                    android:textColor="@color/accent"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 1. Dramatized Audio Bible with Matching Text -->
+        <include
+            android:id="@+id/cardAudioBible"
+            layout="@layout/item_spiritual_card" />
+
+        <!-- 2. Lectio Divina / Pray As You Go / Devote -->
+        <include
+            android:id="@+id/cardLectioDivina"
+            layout="@layout/item_spiritual_card" />
+
+        <!-- 3. Daily Guided Audio Prayer -->
+        <include
+            android:id="@+id/cardGuidedPrayer"
+            layout="@layout/item_spiritual_card" />
+
+        <!-- 4. Daily Guided Audio Scripture -->
+        <include
+            android:id="@+id/cardGuidedScripture"
+            layout="@layout/item_spiritual_card" />
+
+        <!-- 5. Godly TikTok Short Videos -->
+        <include
+            android:id="@+id/cardGodlyTikTok"
+            layout="@layout/item_spiritual_card" />
+
+        <!-- 6. Christian Music (Audio Only) -->
+        <include
+            android:id="@+id/cardChristianMusic"
+            layout="@layout/item_spiritual_card" />
+
+        <!-- 7. Live Bible Study Room -->
+        <include
+            android:id="@+id/cardLiveBibleStudy"
+            layout="@layout/item_spiritual_card" />
+
+        <!-- 8. Guided Daily Devotional -->
+        <include
+            android:id="@+id/cardDailyDevotional"
+            layout="@layout/item_spiritual_card" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

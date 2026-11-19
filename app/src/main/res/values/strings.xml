@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BoomChat Talent</string>
+    <string name="app_tagline">The extra ordinary Untold • Aluta Continua</string>
+    <string name="app_motto">Living rightly with God and fellow people</string>
+    <string name="developer_name_1">TALENT BRUICE</string>
+    <string name="developer_name_2">MYSTERY NKORE</string>
+    <string name="developer_title">The Extra Ordinary Untold Developers</string>
+    <string name="developer_credo">Aluta Continua — Living rightly with God and fellow people</string>
+
+    <!-- Navigation Tabs -->
+    <string name="nav_chats">Chats</string>
+    <string name="nav_status">Status</string>
+    <string name="nav_spiritual">Spiritual</string>
+    <string name="nav_files">Files</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Auth -->
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="verify_email_title">Verify Your Email</string>
+    <string name="verify_email_desc">A verification link has been sent to your email. Please verify your email before continuing to BoomChat Talent.</string>
+    <string name="profile_setup_title">Set Up Your Profile</string>
+    <string name="full_name">Full Name</string>
+    <string name="bio_status">Spiritual Motto / Bio</string>
+
+    <!-- Chat & Calling -->
+    <string name="type_a_message">Type a message…</string>
+    <string name="voice_call">Voice Call</string>
+    <string name="video_call">Video Call</string>
+    <string name="incoming_call">Incoming Call…</string>
+    <string name="calling">Calling…</string>
+    <string name="hold_to_record">Hold to record audio note</string>
+    <string name="recording_audio">Recording audio…</string>
+
+    <!-- Spiritual Hub -->
+    <string name="spiritual_hub_title">Spiritual Growth Hub</string>
+    <string name="lectio_divina">Lectio Divina / Devote</string>
+    <string name="audio_bible">Dramatized Audio Bible</string>
+    <string name="guided_prayer">Daily Guided Prayer</string>
+    <string name="guided_scripture">Daily Guided Scripture</string>
+    <string name="godly_videos">Godly Short Videos</string>
+    <string name="christian_music">Christian Music</string>
+    <string name="live_bible_study">Live Bible Study</string>
+    <string name="daily_devotional">Guided Daily Devotional</string>
+
+    <!-- File Manager & Universal Viewer -->
+    <string name="file_manager_title">Storage &amp; File Explorer</string>
+    <string name="open_with_universal_viewer">Open with Universal Viewer</string>
+    <string name="storage_permission_required">All Files Access is required to explore and view internal storage files.</string>
+    <string name="grant_permission">Grant Permission</string>
+</resources>

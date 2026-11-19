@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors (Deep Spiritual Royal Blue & Gold/Teal) -->
+    <color name="primary">#0E3A53</color>
+    <color name="primary_dark">#082435</color>
+    <color name="primary_light">#1A5B82</color>
+    <color name="accent">#E5A93C</color>
+    <color name="accent_gold">#FFD54F</color>
+
+    <!-- WhatsApp-like Messaging Colors -->
+    <color name="chat_green">#075E54</color>
+    <color name="chat_green_light">#128C7E</color>
+    <color name="chat_green_accent">#25D366</color>
+    <color name="chat_bubble_out">#DCF8C6</color>
+    <color name="chat_bubble_in">#FFFFFF</color>
+    <color name="chat_bg">#ECE5DD</color>
+
+    <!-- Neutrals & Surfaces -->
+    <color name="background">#F7F9FC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_dark">#121212</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="text_primary">#1C252E</color>
+    <color name="text_secondary">#637381</color>
+    <color name="divider">#DFE3E8</color>
+
+    <!-- Functional Colors -->
+    <color name="success">#22C55E</color>
+    <color name="error">#EF4444</color>
+    <color name="warning">#F59E0B</color>
+    <color name="info">#3B82F6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

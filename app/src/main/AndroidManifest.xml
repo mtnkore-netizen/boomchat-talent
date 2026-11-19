@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.talent.boomchat">
+
+    <!-- Network -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Storage & Files (Full internal & external device storage access) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- Media, Camera & Audio for Voice/Video Calls, Voice notes, TikTok Godly videos -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Calling & Contacts -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- Notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+
+    <application
+        android:name=".BoomChatApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BoomChat"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="34">
+
+        <!-- Splash & Credentials Screen -->
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BoomChat.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Auth & Profile Setup -->
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.auth.VerifyEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.ProfileSetupActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Main Hub (Chat, Spiritual, Files, Status) -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- Chat Room (Messaging, Voice, Media sharing) -->
+        <activity
+            android:name=".ui.chat.ChatRoomActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Voice & Video Calling -->
+        <activity
+            android:name=".ui.chat.CallActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Status / Stories -->
+        <activity
+            android:name=".ui.chat.CreateStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.chat.ViewStatusActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BoomChat.Fullscreen" />
+
+        <!-- Universal File Viewer (Word, Excel, PPT, PDF, Image, Video, Audio, Code) -->
+        <activity
+            android:name=".ui.files.viewer.UniversalFileViewerActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+
+        <!-- Christian Spiritual Growth Features -->
+        <activity
+            android:name=".ui.spiritual.lectio.LectioDivinaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.bible.AudioBibleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.prayer.GuidedPrayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.prayer.UploadPrayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.scripture.GuidedScriptureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.scripture.UploadScriptureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.godlyvideos.GodlyTikTokActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BoomChat.Fullscreen" />
+        <activity
+            android:name=".ui.spiritual.godlyvideos.UploadGodlyVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.music.ChristianMusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.music.UploadMusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.livestudy.LiveBibleStudyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.devotional.DailyDevotionalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.spiritual.devotional.UploadDevotionalActivity"
+            android:exported="false" />
+
+        <!-- Settings & Developer Credentials -->
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.AboutDeveloperActivity"
+            android:exported="false" />
+
+        <!-- File Provider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>
