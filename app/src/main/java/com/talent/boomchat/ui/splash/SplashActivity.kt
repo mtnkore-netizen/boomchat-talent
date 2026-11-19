@@ -5,12 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.talent.boomchat.data.firebase.FirebaseManager
+import com.talent.boomchat.data.local.UserSessionManager
 import com.talent.boomchat.databinding.ActivitySplashBinding
 import com.talent.boomchat.ui.MainActivity
-import com.talent.boomchat.ui.auth.AuthActivity
 import com.talent.boomchat.ui.auth.ProfileSetupActivity
-import com.talent.boomchat.ui.auth.VerifyEmailActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -25,39 +23,22 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         lifecycleScope.launch {
-            // Animate or hold splash for 2 seconds to showcase credentials & app identity
+            // Show splash and developer credentials for 2 seconds
             delay(2000)
-            checkAuthAndRoute()
+            routeNextScreen()
         }
     }
 
-    private suspend fun checkAuthAndRoute() {
-        val currentUser = FirebaseManager.currentUser
-        if (currentUser == null) {
-            // No user signed in -> Go to Auth
-            startActivity(Intent(this@SplashActivity, AuthActivity::class.java))
-            finish()
-            return
-        }
+    private fun routeNextScreen() {
+        val sessionManager = UserSessionManager(this)
 
-        // Check email verification
-        currentUser.reload()
-        if (!currentUser.isEmailVerified) {
-            startActivity(Intent(this@SplashActivity, VerifyEmailActivity::class.java))
-            finish()
-            return
-        }
-
-        // Check profile setup completion
-        val profile = FirebaseManager.getUserProfile(currentUser.uid)
-        if (profile == null || !profile.isProfileComplete) {
+        if (!sessionManager.isProfileComplete) {
+            // First time use -> Go directly to Profile Setup (No Sign In / Sign Up needed!)
             startActivity(Intent(this@SplashActivity, ProfileSetupActivity::class.java))
-            finish()
-            return
+        } else {
+            // Already setup -> Go straight into the main app!
+            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
         }
-
-        // All set -> Go to Main App
-        startActivity(Intent(this@SplashActivity, MainActivity::class.java))
         finish()
     }
 }
